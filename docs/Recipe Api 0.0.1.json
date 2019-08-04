@@ -1,0 +1,21 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Reciple API",
+        "description": "Allows for storing and viewing recipes",
+        "version": "0.0.1a"
+    },
+    "paths": {
+        "/recipes": {
+            "$ref": "/paths/recipes/recipes.json"
+        },
+        "/recipes/{recipeId}": {
+            "$ref": "/paths/recipes/recipeId/recipe_id.json"
+        }
+    },
+    "components": {
+        "schemas": {            
+            "$ref": "/components/schemas/schemas_master.json"            
+        }
+    }
+}

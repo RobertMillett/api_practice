@@ -1,0 +1,25 @@
+{
+    "get": {
+        "responses": {
+          "200": {
+            "description": "Returns a specific recipe",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Recipe"
+                }
+              }
+            }
+          }
+        }
+      },
+    "parameters": [
+      {
+        "name": "recipeId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        }
+      }]
+}
