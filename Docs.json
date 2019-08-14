@@ -63,7 +63,7 @@
           }
         }
       },
-    "parameters": [
+      "parameters": [
       {
         "name": "recipeId",
         "in": "path",
@@ -72,6 +72,106 @@
           "type": "integer"
         }
       }]
+    },
+    "/ingredients": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Returns a list of all Ingredients",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ingredient"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully added a new Ingredient",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ingredient"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ingredients/{ingredientName}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved the Ingredient",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ingredient"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully updated ingredient",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "ingredientName",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }]
     }
   },
   "components": {
