@@ -1,8 +1,0 @@
-{
-    "Recipe": {
-        "$ref":"recipe.json"
-    },
-    "Ingredient": {
-        "$ref":"ingredient.json"
-    }
-}
